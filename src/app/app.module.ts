@@ -12,10 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { UserFormComponent } from "./user-form/user-form.component";
 import { UserListComponent } from "./user-list/user-list.component";
-import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule for HTTP requests
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserEditComponent } from './user-edit/user-edit.component'; // Import FormsModule for template-driven forms
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,8 @@ import { UserEditComponent } from './user-edit/user-edit.component'; // Import F
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule, // Include HttpClientModule
-    FormsModule, BrowserAnimationsModule, // Include FormsModule
+    HttpClientModule,
+    FormsModule, BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
