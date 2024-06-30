@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component'; // Make sure this path is correct
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MatTableModule } from '@angular/material/table';
@@ -35,7 +35,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
-    FormsModule, BrowserAnimationsModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
