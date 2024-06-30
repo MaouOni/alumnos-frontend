@@ -5,8 +5,8 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/users', pathMatch: 'full' },
-  { path: 'users', component: UserListComponent },
+  { path: '', redirectTo: '/users-list', pathMatch: 'full' },
+  { path: 'users-list', component: UserListComponent },
   { path: 'create', component: UserFormComponent },
   { path: 'edit/:id', component: UserEditComponent }
 ];
