@@ -1,0 +1,23 @@
+<div class="container mt-4 bg-dark text-light p-4">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control bg-dark text-light" id="nombre" required [(ngModel)]="user.nombre" name="nombre">
+    </div>
+    <div class="mb-3">
+      <label for="paterno" class="form-label">Paterno</label>
+      <input type="text" class="form-control bg-dark text-light" id="paterno" required [(ngModel)]="user.paterno" name="paterno">
+    </div>
+    <div class="mb-3">
+      <label for="materno" class="form-label">Materno</label>
+      <input type="text" class="form-control bg-dark text-light" id="materno" required [(ngModel)]="user.materno" name="materno">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control bg-dark text-light" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </div>
+  </form>
+</div>

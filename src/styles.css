@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #121212; /* Dark background color */
+  color: #ffffff; /* Light text color */
+}
+
+.container, .mat-elevation-z8 {
+  background-color: #121212; /* Dark background for containers */
+  color: #ffffff; /* Light text color */
+}
+
+/* Override Material Table styles */
+.mat-table {
+  background-color: #121212; /* Dark background for table */
+  color: #ffffff; /* Light text color */
+}
+
+.mat-header-cell, .mat-cell {
+  background-color: #121212; /* Dark background for table cells */
+  color: #ffffff; /* Light text color */
+}
+
+/* Override Material Paginator styles */
+.mat-paginator {
+  background-color: #121212; /* Dark background for paginator */
+  color: #ffffff; /* Light text color */
+}
+
+/* Override Form styles */
+.form-control {
+  background-color: #121212; /* Dark background for form controls */
+  color: #ffffff; /* Light text color */
+}
+
+.form-label {
+  color: #ffffff; /* Light text color for labels */
+}
+
+button {
+  color: #ffffff; /* Light text color for buttons */
+}
+
+.mat-form-field {
+  background-color: #121212; /* Dark background for form field */
+  color: #ffffff; /* Light text color */
+}
+
+.mat-label {
+  color: #ffffff; /* Light text color for form field labels */
+}
+
+.mat-input-element {
+  background-color: #121212; /* Dark background for input */
+  color: #ffffff; /* Light text color */
+}
