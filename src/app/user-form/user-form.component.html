@@ -1,23 +1,23 @@
-<div class="container mt-4 bg-dark text-light p-4">
-  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre</label>
-      <input type="text" class="form-control bg-dark text-light" id="nombre" required [(ngModel)]="user.nombre" name="nombre">
+<div class="container mt-4">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="p-fluid">
+    <div class="field">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" pInputText required [(ngModel)]="user.nombre" name="nombre" />
     </div>
-    <div class="mb-3">
-      <label for="paterno" class="form-label">Paterno</label>
-      <input type="text" class="form-control bg-dark text-light" id="paterno" required [(ngModel)]="user.paterno" name="paterno">
+    <div class="field">
+      <label for="paterno">Paterno</label>
+      <input id="paterno" type="text" pInputText required [(ngModel)]="user.paterno" name="paterno" />
     </div>
-    <div class="mb-3">
-      <label for="materno" class="form-label">Materno</label>
-      <input type="text" class="form-control bg-dark text-light" id="materno" required [(ngModel)]="user.materno" name="materno">
+    <div class="field">
+      <label for="materno">Materno</label>
+      <input id="materno" type="text" pInputText required [(ngModel)]="user.materno" name="materno" />
     </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control bg-dark text-light" id="email" required [(ngModel)]="user.email" name="email">
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" pInputText required [(ngModel)]="user.email" name="email" />
     </div>
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">Crear</button>
+    <div class="field d-flex justify-content-center">
+      <button pButton type="submit" label="Crear" icon="pi pi-check"></button>
     </div>
   </form>
 </div>

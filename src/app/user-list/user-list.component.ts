@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { Table } from 'primeng/table';
 import { Router } from '@angular/router';
 import { UserService } from '../user/user.service';
 import { UserModel } from '../user/user.model';
@@ -12,32 +10,33 @@ import { UserModel } from '../user/user.model';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre', 'paterno', 'materno', 'email', 'actions'];
-  dataSource: MatTableDataSource<UserModel> = new MatTableDataSource();
+  users: UserModel[] = [];
+  cols: any[];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild('dt') table: Table;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getUsers().subscribe(users => {
       console.log('Users from service:', users); // Log users
-      this.dataSource.data = users;
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+      this.users = users;
     }, error => {
       console.error('Error fetching users:', error);
     });
+
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'nombre', header: 'Nombre' },
+      { field: 'paterno', header: 'Apellido Paterno' },
+      { field: 'materno', header: 'Apellido Materno' },
+      { field: 'email', header: 'Email' },
+      { field: 'actions', header: 'Acciones' }
+    ];
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  applyFilterGlobal(event: Event, stringVal: any) {
+    this.table.filterGlobal((event.target as HTMLInputElement).value, stringVal);
   }
 
   editUser(id: number) {
@@ -46,7 +45,7 @@ export class UserListComponent implements OnInit {
 
   deleteUser(id: number) {
     this.userService.deleteUser(id).subscribe(() => {
-      this.dataSource.data = this.dataSource.data.filter(user => user.id !== id);
+      this.users = this.users.filter(user => user.id !== id);
     });
   }
 }
