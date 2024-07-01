@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { User } from './user';
-import { environment } from '../environments/environment';
+import { UserModel } from './user.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +13,27 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseUrl).pipe(
+  getUsers(): Observable<UserModel[]> {
+    return this.http.get<UserModel[]>(this.baseUrl).pipe(
       tap(users => console.log('Fetched users:', users)),
       catchError(this.handleError)
     );
   }
 
-  getUser(id: number): Observable<User> {
-    return this.http.get<User>(`${this.baseUrl}/${id}`).pipe(
+  getUser(id: number): Observable<UserModel> {
+    return this.http.get<UserModel>(`${this.baseUrl}/${id}`).pipe(
       catchError(this.handleError)
     );
   }
 
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, user).pipe(
+  createUser(user: UserModel): Observable<UserModel> {
+    return this.http.post<UserModel>(this.baseUrl, user).pipe(
       catchError(this.handleError)
     );
   }
 
-  updateUser(id: number, user: User): Observable<User> {
-    return this.http.put<User>(`${this.baseUrl}/${id}`, user).pipe(
+  updateUser(id: number, user: UserModel): Observable<UserModel> {
+    return this.http.put<UserModel>(`${this.baseUrl}/${id}`, user).pipe(
       catchError(this.handleError)
     );
   }

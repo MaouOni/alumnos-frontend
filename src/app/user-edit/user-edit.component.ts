@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { User } from '../user';
+import { UserService } from '../user/user.service';
+import { UserModel } from '../user/user.model';
 
 @Component({
   selector: 'app-user-edit',
@@ -9,7 +9,7 @@ import { User } from '../user';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
-  user: User = new User();
+  user: UserModel = new UserModel();
 
   constructor(
     private route: ActivatedRoute,

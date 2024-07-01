@@ -3,8 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
-import { User } from '../user';
+import { UserService } from '../user/user.service';
+import { UserModel } from '../user/user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -13,7 +13,7 @@ import { User } from '../user';
 })
 export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombre', 'paterno', 'materno', 'email', 'actions'];
-  dataSource: MatTableDataSource<User> = new MatTableDataSource();
+  dataSource: MatTableDataSource<UserModel> = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -41,7 +41,7 @@ export class UserListComponent implements OnInit {
   }
 
   editUser(id: number) {
-    this.router.navigate(['/edit', id]);
+    this.router.navigate(['/users/edit', id]);
   }
 
   deleteUser(id: number) {
