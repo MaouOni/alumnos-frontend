@@ -10,11 +10,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { UserFormComponent } from "./user-form/user-form.component";
-import { UserListComponent } from "./user-list/user-list.component";
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserListComponent } from './user-list/user-list.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
@@ -22,11 +22,13 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     AppComponent,
     UserFormComponent,
     UserListComponent,
-    UserEditComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -34,9 +36,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
